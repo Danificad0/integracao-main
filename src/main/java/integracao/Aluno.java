@@ -14,7 +14,7 @@ public class Aluno {
     public void concluirCursoComMediaSuperiorASete() {
         setNumeroCursosConcluidos(getNumeroCursosConcluidos() + 1);
 
-        if (isPremium && getNumeroCursosConcluidos() % 1 == 0) {
+        if (isPremium && getNumeroCursosConcluidos() > 0) {
             moedas += 3;
         }
 
