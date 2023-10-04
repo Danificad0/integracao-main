@@ -6,19 +6,19 @@ public class Aluno {
     private int moedas;
 
     public Aluno() {
-        this.numeroCursosConcluidos = 0;
+        this.setNumeroCursosConcluidos(0);
         this.isPremium = false;
         this.moedas = 0;
     }
 
     public void concluirCursoComMediaSuperiorASete() {
-        numeroCursosConcluidos++;
+        setNumeroCursosConcluidos(getNumeroCursosConcluidos() + 1);
 
-        if (isPremium && numeroCursosConcluidos % 1 == 0) {
+        if (isPremium && getNumeroCursosConcluidos() % 1 == 0) {
             moedas += 3;
         }
 
-        if (numeroCursosConcluidos == 12) {
+        if (getNumeroCursosConcluidos() == 12) {
             isPremium = true;
         }
     }
@@ -42,4 +42,12 @@ public class Aluno {
     public boolean podeTrocarPorCriptomoeda() {
         return moedas >= 1;
     }
+
+	public int getNumeroCursosConcluidos() {
+		return numeroCursosConcluidos;
+	}
+
+	public void setNumeroCursosConcluidos(int numeroCursosConcluidos) {
+		this.numeroCursosConcluidos = numeroCursosConcluidos;
+	}
 }
