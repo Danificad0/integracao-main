@@ -36,4 +36,12 @@ public class AlunoTest {
         assertEquals(1, aluno.getMoedas());
         assertTrue(aluno.podeTrocarPorCriptomoeda());
     }
+    @Test
+    public void testInicializaAluno() {
+        Aluno aluno = new Aluno();
+
+        assertEquals(0, aluno.getNumeroCursosConcluidos());
+        assertFalse(aluno.isPremium());
+        assertEquals(0, aluno.getMoedas());
+    }
 }
