@@ -44,4 +44,29 @@ public class AlunoTest {
         assertFalse(aluno.isPremium());
         assertEquals(0, aluno.getMoedas());
     }
+    @Test
+    public void testUsoMoedasQuandoSuficientes() {
+        Aluno aluno = new Aluno();
+        aluno.concluirCursoComMediaSuperiorASete();
+        aluno.usarMoedas(1);
+
+        assertEquals(0, aluno.getMoedas());
+    }
+
+    @Test
+    public void testUsoMoedasQuandoInsuficientes() {
+        Aluno aluno = new Aluno();
+        aluno.concluirCursoComMediaSuperiorASete();
+        aluno.usarMoedas(2);
+
+        assertEquals(0, aluno.getMoedas());
+    }
+
+    @Test
+    public void testNaoPodeTrocarPorCriptomoeda() {
+        Aluno aluno = new Aluno();
+        aluno.concluirCursoComMediaSuperiorASete();
+
+        assertFalse(aluno.podeTrocarPorCriptomoeda());
+    }
 }
