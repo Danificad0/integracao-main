@@ -40,7 +40,7 @@ public class Aluno {
     }
 
     public boolean podeTrocarPorCriptomoeda() {
-        return moedas >= 1;
+        return moedas > 0;
     }
 
 	public int getNumeroCursosConcluidos() {
